@@ -16,15 +16,15 @@ def pascal_triangle(n):
             triangle.append(current_row)
             continue
 
-        previous_row_index = row_index - 1
-        for element_index in range(len(triangle[previous_row_index])):
-            if element_index + 1 == len(triangle[previous_row_index]):
+        prow = row_index - 1
+        for e_index in range(len(triangle[prow])):
+            if e_index + 1 == len(triangle[prow]):
                 # last element
                 current_row.append(1)
                 break
             # Add two previous values to get the current next value
-            next_value = triangle[previous_row_index][element_index] + triangle[previous_row_index][element_index + 1]
-            current_row.append(next_value)
+            next_val = triangle[prow][e_index] + triangle[prow][e_index + 1]
+            current_row.append(next_val)
         triangle.append(current_row)
 
     return triangle
