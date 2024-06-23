@@ -10,15 +10,19 @@ def print_stats(status_counts, total_size):
     Args:
         status_counts: Dictionary of status codes.
         total_size: Total file size.
+    Returns:
+        Nothing
     """
-    print(f"File size: {total_size}")
-    for status_code in sorted(status_counts.keys()):
-        if status_counts[status_code] > 0:
-            print(f"{status_code}: {status_counts[status_code]}")
+
+    print("File size: {}".format(total_size))
+    for key, val in sorted(status_counts.items()):
+        if val != 0:
+            print("{}: {}".format(key, val))
 
 
 # Initialize metrics
 total_size = 0
+status_code = 0
 line_count = 0
 status_counts = {
     "200": 0,
@@ -39,11 +43,12 @@ try:
         if len(parsed_line) > 2:
             line_count += 1
 
-            total_size += int(parsed_line[0])
-            status_code = parsed_line[1]
+            if line_count <= 10:
+                total_size += int(parsed_line[0])
+                status_code = parsed_line[1]
 
-            if status_code in status_counts:
-                status_counts[status_code] += 1
+                if status_code in status_counts:
+                    status_counts[status_code] += 1
 
             if line_count == 10:
                 print_stats(status_counts, total_size)
