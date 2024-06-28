@@ -4,7 +4,7 @@ Validate UTF-8 Encoding
 """
 
 
-def isValidUTF8(data):
+def validUTF8(data):
     """
     Check if the given data is valid UTF-8 encoding.
 
