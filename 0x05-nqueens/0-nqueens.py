@@ -18,7 +18,9 @@ def solve_nqueens(n):
     results = []
 
     def is_safe(row, col, queens_positions):
-        """Checks if a queen can be placed at (row, col) without being attacked."""
+        """Checks if a queen can be placed at
+        (row, col) without being attacked.
+        """
         for r in range(row):
             if abs(col - queens_positions[r]) == row - r:
                 return False
@@ -36,7 +38,7 @@ def solve_nqueens(n):
         if row == n:
             save_solution(queens_positions)
             return
-        
+
         for col in range(n):
             if columns[col] == 0 and is_safe(row, col, queens_positions):
                 columns[col] = 1
@@ -47,21 +49,22 @@ def solve_nqueens(n):
     place_queens(0, [0] * n, [0] * n)
     return results
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-    
+
     try:
         n = int(sys.argv[1])
     except ValueError:
         print("N must be a number")
         sys.exit(1)
-    
+
     if n < 4:
         print("N must be at least 4")
         sys.exit(1)
-    
+
     solutions = solve_nqueens(n)
     for solution in solutions:
         print(solution)
