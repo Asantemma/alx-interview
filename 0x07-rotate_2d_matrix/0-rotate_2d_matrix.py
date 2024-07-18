@@ -15,8 +15,10 @@ def rotate_2d_matrix(matrix):
     # Transpose the matrix
     for i in range(n):
         for j in range(i, n):
+            # Swap element at (i, j) with element at (j, i)
             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
     
     # Reverse each row
     for i in range(n):
+        # Reverse the ith row
         matrix[i].reverse()
