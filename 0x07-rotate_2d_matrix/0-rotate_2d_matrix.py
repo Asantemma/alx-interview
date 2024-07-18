@@ -1,6 +1,12 @@
+#!/usr/bin/python
+"""
+ROtating a 2D matrix
+"""
+
+
 def rotate_2d_matrix(matrix):
     """
-    Rotate the matrix 90 degrees clockwise in place.
+    Rotates a matrix 90 degrees clockwise in place.
     Args:
     matrix (list of list of int): The n x n 2D matrix to rotate
     """
