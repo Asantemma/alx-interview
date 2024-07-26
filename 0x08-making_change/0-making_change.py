@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """ function that determines fewest number of coins needed
 to meet a certaib amount"""
+
+
 def makeChange(coins, total):
     """Determines the fewest number of coins needed to meet
     a given amount.
-    
+
     Args:
         coins (list[int]): List of coin denominations.
         total (int): The target amount to be met.
@@ -39,7 +41,6 @@ def makeChange(coins, total):
                 else:
                     break
 
-        # If the total is not zero after using the coins, then the total amount cannot be met
         if total != 0:
             minCoins = -1
 
