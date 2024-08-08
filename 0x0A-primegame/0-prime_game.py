@@ -1,6 +1,13 @@
 #!/usr/bin/python3
+"""
+Prime number collector game
+"""
+
 
 def isWinner(x, nums):
+    """
+    Checks who is the winner int he game
+    """
     # Determines all primes up to the maximum number in nums
     def sieve_of_eratosthenes(max_n):
         is_prime = [True] * (max_n + 1)
