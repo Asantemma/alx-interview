@@ -7,9 +7,17 @@ Prime number collector game
 def isWinner(x, nums):
     """
     Checks who is the winner int he game
+
+    x: number of rounds
+    nums: an array of n
+    Return: name of the player that won the most rounds
     """
-    # Determines all primes up to the maximum number in nums
+
     def sieve_of_eratosthenes(max_n):
+        """
+        Determines all primes up to the maximum number in nums
+        max_n: maximum number
+        """
         is_prime = [True] * (max_n + 1)
         is_prime[0], is_prime[1] = False, False
         for i in range(2, int(max_n**0.5) + 1):
