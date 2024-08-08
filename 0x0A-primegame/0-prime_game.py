@@ -26,13 +26,12 @@ def isWinner(x, nums):
         for i in range(2, n + 1):
             if is_prime[i]:
                 primes_count += 1
-        
-    
+
         if primes_count % 2 == 1:
             maria_wins += 1
         else:
             ben_wins += 1
-    
+
     # Determine the overall winner
     if maria_wins > ben_wins:
         return "Maria"
